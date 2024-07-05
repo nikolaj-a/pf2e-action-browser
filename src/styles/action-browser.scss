@@ -1,0 +1,204 @@
+.control-tool {
+    .action-browser:before {
+        content: "A";
+        font-family: "Pathfinder2eActions";
+        font-style: normal;
+    }
+}
+
+@mixin button-group {
+    font-size: var(--font-size-14);
+    margin-bottom: 0;
+    padding: 2px 0;
+
+    display: flex;
+    justify-content: right;
+    flex-wrap: wrap;
+    gap: 3px;
+
+    &.multiple-attack-penalty {
+        display: grid;
+        grid-template-columns: repeat(3, min-content);
+    }
+
+    button {
+        border: none;
+        flex: 0;
+        gap: 2px;
+        height: 1.25rem;
+        line-height: unset;
+        margin: 0;
+        padding: 0 0.5em;
+        white-space: nowrap;
+        display: flex;
+        column-gap: 3px;
+        justify-content: space-between;
+
+        &:disabled {
+            opacity: 0.7;
+        }
+
+        &:not(:disabled):hover {
+            box-shadow: none;
+            text-shadow: 0 0 2px var(--text-light);
+        }
+    }
+}
+
+.action-browser {
+    .tabs {
+        border-style: solid;
+        border-width: 9px;
+        border-image: url("/systems/pf2e/assets/sheet/corner-box.webp") 9 repeat;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+        flex: 0;
+        width: 100%;
+        display: inline-flex;
+        justify-content: space-evenly;
+        align-items: center;
+        background: var(--secondary);
+        background: url("/systems/pf2e/assets/sheet/border-pattern.webp") repeat-x top, url("/systems/pf2e/assets/sheet/border-pattern.webp") repeat-x bottom, var(--secondary);
+
+        a {
+            color: var(--sidebar-label);
+            padding: 4px 0;
+            font-family: var(--sans-serif);
+            font-size: var(--font-size-12);
+            position: relative;
+
+            &.active::after {
+                bottom: -2px;
+                right: 39%;
+                position: absolute;
+                content: "";
+                width: 0;
+                height: 0;
+                border-left: 4px solid transparent;
+                border-right: 4px solid transparent;
+                border-top: 4px solid var(--sidebar-label);
+            }
+        }
+    }
+
+    .action-list {
+        margin-top: 5px;
+
+        .action-list-item:not(:first-child) {
+            border-top: 1px solid rgba(120, 100, 82, 0.3);
+        }
+
+        .action-list-item {
+            padding-top: 3px;
+            padding-bottom: 3px;
+
+            &:nth-child(odd) {
+                background-color: rgba(120, 100, 82, 0.1);
+            }
+            .action {
+                --action-icon-size: 32px;
+
+                display: flex;
+                column-gap: 5px;
+                align-items: start;
+                padding: 0 4px 0 4px;
+
+                .action-icon {
+                    flex: 0 0 var(--action-icon-size);
+                    height: var(--action-icon-size);
+
+                    img {
+                        height: var(--action-icon-size);
+                        width: var(--action-icon-size);
+                    }
+                }
+
+                .action-summary {
+                    display: flex;
+                    flex: 1 1 auto;
+                    min-height: var(--action-icon-size);
+                    min-width: 140px;
+                    flex-direction: column;
+                    justify-content: center;
+
+                    .action-heading {
+                        font-weight: bold;
+                    }
+                }
+
+                .action-buttons {
+                    display: flex;
+                    flex: 1 2 auto;
+                    align-items: center;
+                    justify-content: right;
+                    min-height: var(--action-icon-size);
+
+                    .button-group {
+                        @include button-group;
+                    }
+                }
+            }
+
+            .action-variants {
+                display: flex;
+                flex-direction: column;
+                margin: -2px 0 0 17px;
+                border-left: 3px dotted #786452;
+                min-width: 140px;
+                padding: 0 0 3px 14px;
+
+                .action-variant {
+                    display: flex;
+                    column-gap: 5px;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 4px 4px 0 7px;
+
+                    .action-variant-summary {
+                        min-width: 140px;
+                    }
+
+                    .button-group {
+                        @include button-group;
+                    }
+                }
+            }
+        }
+    }
+
+    .sidebar {
+        position: absolute;
+        top: 50px;
+        left: 100%;
+        width: 300px;
+        height: calc(100% - 70px);
+        min-height: calc(100% - 70px);
+        max-height: calc(100% - 70px);
+        background: url("/ui/parchment.jpg") repeat;
+        border-left: 1px solid rgba(0, 0, 0, 0.15);
+        box-shadow: 0 0 20px var(--color-shadow-dark);
+        overflow-y: auto;
+        z-index: -1;
+
+        .action-details {
+            padding: 5px;
+
+            h1, h2, h3, h4, h5, h6 {
+                font-family: var(--font-primary);
+                border-bottom: none;
+            }
+            h1 {
+                font-size: 1.5em;
+                border-bottom: 1px solid black;
+            }
+            h2 {
+                font-size: 1.3em;
+                text-align: center;
+            }
+
+            .sample-tasks {
+                background: rgba(0, 0, 0, 0.2);
+                padding: 5px;
+            }
+        }
+    }
+}
