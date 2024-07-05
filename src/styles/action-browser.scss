@@ -173,7 +173,7 @@
         height: calc(100% - 70px);
         min-height: calc(100% - 70px);
         max-height: calc(100% - 70px);
-        background: url("/ui/parchment.jpg") repeat;
+        background: var(--color-select-option-bg) url("../../../ui/parchment.jpg") repeat;
         border-left: 1px solid rgba(0, 0, 0, 0.15);
         box-shadow: 0 0 20px var(--color-shadow-dark);
         overflow-y: auto;
