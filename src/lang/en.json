@@ -1,0 +1,39 @@
+{
+  "CONTROLS": {
+    "ActionBrowser": "Action Browser"
+  },
+  "PF2EActionBrowser": {
+    "Buttons": {
+      "Use": {
+        "Label": "Use"
+      }
+    },
+    "ProficiencyRank": {
+      "expert": "Expert",
+      "legendary": "Legendary",
+      "master": "Master",
+      "trained": "Trained",
+      "untrained": "Untrained"
+    },
+    "Tabs": {
+      "Basic": {
+        "Title": "Basic"
+      },
+      "Favorites": {
+        "Title": "Favorites"
+      },
+      "Other": {
+        "Title": "Other"
+      },
+      "Skill": {
+        "Title": "Skill"
+      },
+      "SpecialtyBasic": {
+        "Title": "Specialty Basic"
+      }
+    },
+    "Title": "Action Browser",
+    "TitleWithSingleActor": "Action Browser ({name})",
+    "TitleWithMultipleTokens": "Action Browser ({tokens} selected tokens)"
+  }
+}
