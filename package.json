@@ -1,6 +1,6 @@
 {
   "name": "pf2e-action-browser",
-  "version": "1.0.0",
+  "version": "0.3.0",
   "scripts": {
     "build": "npx webpack --mode=production"
   },
