@@ -1,0 +1,34 @@
+<div class="action-browser">
+    {{#if details}}
+        <div class="sidebar">
+            {{> modules/pf2e-action-browser/templates/apps/action-details.hbs action=details actor=actor disabled=disabled}}
+        </div>
+    {{/if}}
+    <nav class="tabs" data-group="primary-tabs">
+        <!--
+         <a class="item" data-tab="favorites" data-group="primary-tabs">{{localize "PF2EActionBrowser.Tabs.Favorites.Title"}}</a>
+         -->
+        <a class="item" data-tab="basic" data-group="primary-tabs">{{localize "PF2EActionBrowser.Tabs.Basic.Title"}}</a>
+        <a class="item" data-tab="specialty-basic" data-group="primary-tabs">{{localize "PF2EActionBrowser.Tabs.SpecialtyBasic.Title"}}</a>
+        <a class="item" data-tab="skill" data-group="primary-tabs">{{localize "PF2EActionBrowser.Tabs.Skill.Title"}}</a>
+        <a class="item" data-tab="other" data-group="primary-tabs">{{localize "PF2EActionBrowser.Tabs.Other.Title"}}</a>
+    </nav>
+
+    <section class="content">
+        <div class="tab" data-tab="favorites" data-group="primary-tabs">
+            {{> modules/pf2e-action-browser/templates/apps/action-list.hbs actions=actions.favorites actor=actor disabled=disabled}}
+        </div>
+        <div class="tab" data-tab="basic" data-group="primary-tabs">
+            {{> modules/pf2e-action-browser/templates/apps/action-list.hbs actions=actions.basic actor=actor disabled=disabled}}
+        </div>
+        <div class="tab" data-tab="specialty-basic" data-group="primary-tabs">
+            {{> modules/pf2e-action-browser/templates/apps/action-list.hbs actions=actions.specialty-basic actor=actor disabled=disabled}}
+        </div>
+        <div class="tab" data-tab="skill" data-group="primary-tabs">
+            {{> modules/pf2e-action-browser/templates/apps/action-list.hbs actions=actions.skill actor=actor disabled=disabled}}
+        </div>
+        <div class="tab" data-tab="other" data-group="primary-tabs">
+            {{> modules/pf2e-action-browser/templates/apps/action-list.hbs actions=actions.other actor=actor disabled=disabled}}
+        </div>
+    </section>
+</div>

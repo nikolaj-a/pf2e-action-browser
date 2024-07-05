@@ -1,0 +1,19 @@
+<div class="action-details">
+    <h1>{{localize action.name}} {{{actionGlyph action.cost}}}</h1>
+    {{#if action.traits}}
+        <div class="tags">
+            {{#each action.traits as |trait|}}
+                <span class="tag">{{ trait }}</span>
+            {{/each}}
+        </div>
+    {{/if}}
+    {{{action.description}}}
+    {{#if action.sampleTasks}}
+        <div class="sample-tasks">
+            <h2>{{localize 'PF2E.ActionsSampleTasks.Title' action=(localize action.name)}}</h2>
+            {{#each action.sampleTasks as |task|}}
+                <strong>{{localize (concat 'PF2EActionBrowser.ProficiencyRank.' @key)}}</strong> {{localize task}}<br>
+            {{/each}}
+        </div>
+    {{/if}}
+</div>
