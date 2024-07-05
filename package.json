@@ -1,0 +1,23 @@
+{
+  "name": "pf2e-action-browser",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "npx webpack --mode=production"
+  },
+  "keywords": [],
+  "author": "nikolaj-a",
+  "license": "UNLICENSED",
+  "description": "",
+  "devDependencies": {
+    "@types/jquery": "^3.5.29",
+    "copy-webpack-plugin": "^12.0.2",
+    "css-loader": "^7.1.2",
+    "mini-css-extract-plugin": "^2.9.0",
+    "sass": "^1.77.6",
+    "sass-loader": "^14.2.1",
+    "style-loader": "^4.0.0",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.5.3",
+    "webpack-cli": "^5.1.4"
+  }
+}

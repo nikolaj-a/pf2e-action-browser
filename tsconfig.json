@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "noImplicitAny": true,
+    "module": "NodeNext",
+    "target": "ES2022",
+    "strict": true,
+    "moduleResolution": "NodeNext",
+    "lib": [
+      "esnext",
+      "dom",
+      "dom.iterable"
+    ],
+    "types": [
+      "jquery"
+    ],
+    "typeRoots": [
+      "node_modules/@types",
+      "types/foundry",
+      "types/pf2e"
+    ]
+  }
+}
