@@ -3,7 +3,7 @@
     {{#if action.traits}}
         <div class="tags">
             {{#each action.traits as |trait|}}
-                <span class="tag">{{ trait }}</span>
+                <span class="tag" data-tooltip="{{localize (lookup @root.traits.description trait)}}">{{localize (lookup @root.traits.label trait)}}</span>
             {{/each}}
         </div>
     {{/if}}

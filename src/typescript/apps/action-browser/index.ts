@@ -5,8 +5,12 @@ interface HasPreview {
 interface ActionBrowserData {
     actions: Record<ActionSection | "favorites" | "other", ActionListItem[]>;
     actor?: Actor;
-    disabled: boolean;
     details?: ActionDetails;
+    disabled: boolean;
+    traits: {
+        description: Record<string, string>;
+        label: Record<string, string>;
+    };
 }
 
 function hasPreview(value: object): value is HasPreview {
@@ -213,8 +217,12 @@ export class ActionBrowser extends Application {
         return {
             actions,
             actor,
-            disabled: actors.length === 0,
             details,
+            disabled: actors.length === 0,
+            traits: {
+                description: CONFIG.PF2E.traitsDescriptions,
+                label: CONFIG.PF2E.actionTraits,
+            }
         };
     }
 

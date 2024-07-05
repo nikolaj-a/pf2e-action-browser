@@ -69,3 +69,10 @@ declare interface GamePF2e extends Game {
         actions: Collection<Action>;
     };
 }
+
+declare const CONFIG: {
+    PF2E: {
+        actionTraits: Record<string, string>;
+        traitsDescriptions: Record<string, string>;
+    };
+};
