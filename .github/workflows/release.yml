@@ -40,10 +40,9 @@ jobs:
       - name: Create Release
         uses: ncipollo/release-action@v1
         with:
-          name: ${{ env.moduleVersion }}
-          allowUpdates: false
-          draft: false
-          prerelease: false
-          token: ${{ secrets.GITHUB_TOKEN }}
           artifacts: "./dist/module.json,./dist/pf2e-action-browser.zip"
+          draft: false
+          generateReleaseNotes: true
+          prerelease: false
           tag: ${{ env.moduleVersion }}
+          token: ${{ secrets.GITHUB_TOKEN }}
