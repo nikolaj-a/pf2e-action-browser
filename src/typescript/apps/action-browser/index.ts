@@ -211,6 +211,12 @@ export class ActionBrowser extends Application {
             .forEach((action) => {
                 actions[action.section ?? "other"].push(action);
             });
+        Object.values(actions).forEach((section) => {
+            // sort actions in each section alphabetically
+            section.sort((a, b) =>
+                game.i18n.localize(a.name).localeCompare(game.i18n.localize(b.name))
+            );
+        });
         const details: ActionDetails | undefined = this.#selected
             ? await ActionDetails.from(this.#selected, actor)
             : undefined;
